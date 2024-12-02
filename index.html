@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P2-M16</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        .time-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s;
+        }
+        .banner:hover {
+            background-color: #45a049;
+        }
+        .banner hr {
+            border: none;
+            border-top: 1px solid white;
+            margin: 5px 0;
+        }
+        .subtitle {
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+        .content {
+            display: none;
+            padding: 15px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+
+            const activity2 = document.getElementById('activity-2');
+            const activity3Step4 = document.getElementById('activity-3-step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (activity3Step4) activity3Step4.style.display = 'block';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (activity3Step4) activity3Step4.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (activity3Step4) activity3Step4.style.display = 'block';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        Playbook-P2-M16
+    </div>
+
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+  
+  <!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('activity-0-content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr>
+        <div class="subtitle">Preparación del espacio y materiales para iniciar la clase.</div>
+    </div>
+    <div id="activity-0-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 1) y revisar que todos los dispositivos están encendidos, conectados a internet, y Scratch abierto en modo "Crear". Confirmar que los estudiantes tienen sus materiales de trabajo (Magic Boards o cuadernos) y que el espacio está organizado para la actividad.</td>
+                <td>No se utiliza diálogo con los estudiantes en esta etapa.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('activity-1-content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr>
+        <div class="subtitle">Inicio de la clase con energía y motivación.</div>
+    </div>
+    <div id="activity-1-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 2) y dar la bienvenida a los estudiantes con entusiasmo.</td>
+                <td>"¡Hola, Genios! 🌟 Hoy vamos a comenzar una nueva aventura increíble en Scratch. ¡Prepárense para aprender, experimentar sonidos y trabajar juntos como verdaderos programadores!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 2:</strong> Proyectar (Diapositiva 3) y pedir a los estudiantes que indiquen cómo se sienten.</td>
+                <td>"Antes de comenzar, quiero saber cómo se sienten. Si están emocionados, levanten ambos brazos. Si necesitan energía, levanten uno. ¡Vamos a encender nuestra chispa creativa juntos!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 3:</strong> Proyectar (Diapositiva 4) y guiar a los estudiantes a realizarlo juntos.</td>
+                <td>"Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios! Hoy será un día lleno de aprendizaje y diversión. ¡Vamos a explorar sonidos y crear algo increíble en Scratch!' "</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 4:</strong> Proyectar (Diapositiva 5) e introducir lo que harán en la misión con Scratch.</td>
+                <td>"Hoy tenemos dos grandes objetivos: 1. Aprender a usar bloques de sonido para que nuestras animaciones cobren vida. 2. Divertirnos creando efectos sonoros únicos y trabajando en equipo para compartir nuestras creaciones. ¡Esta misión será épica, Genios!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('activity-2-content')">
+        <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+        <hr>
+        <div class="subtitle">Actividad para usar el cuerpo y sonidos como bloques de programación.</div>
+    </div>
+    <div id="activity-2-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 6): Explicar el objetivo de crear una "secuencia de programación" con el cuerpo y los sonidos.</td>
+                <td>"¡Genios! Vamos a convertirnos en un bloque de programación viviente. Cada uno de ustedes será un comando que combina movimiento y sonido. ¡Prepárense para programar con el cuerpo!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 2:</strong> Proyectar (Diapositiva 7): Guiar a los estudiantes a realizar movimientos específicos asociados a un sonido en un orden establecido, luego permitirles personalizar.</td>
+                <td>"Sigamos esta secuencia: Aplaudimos diciendo '¡Clap!', damos un paso adelante diciendo '¡Bip!', y giramos en círculo diciendo '¡Pum!'. Ahora, creen su propia secuencia única con sonidos. ¡Quiero verlos programar con su imaginación y su cuerpo!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 3:</strong> Proyectar (Diapositiva 8): Relacionar los movimientos y sonidos con bloques de programación en Scratch.</td>
+                <td>"¡Increíble trabajo, Genios! Así como creamos secuencias con nuestro cuerpo y sonidos, en Scratch usaremos bloques para programar animaciones con movimientos y efectos sonoros. ¿Listos para llevar esto al mundo digital?"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('activity-3-content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr>
+        <div class="subtitle">Desafío para crear animaciones con bloques de movimiento y sonido en Scratch.</div>
+    </div>
+    <div id="activity-3-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 9): Presentar el desafío y los tres niveles (Rookie, Master y Hacker) y explicar cómo se relacionan con el uso de bloques de sonido y movimiento.</td>
+                <td>"¡Genios! Ahora es su turno de programar y crear sonidos increíbles en Scratch. Hoy tienen tres desafíos para elegir: Rookie, Master y Hacker. ¡Elijan el que más los motive y prepárense para ser unos genios de la programación! Vamos a revisar cada nivel para que sepan qué hacer."</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 2:</strong> Proyectar (Diapositiva 10): Describir los pasos y metas específicas para cada nivel (Rookie, Master, Hacker) e incluir ejemplos visuales en la diapositiva.</td>
+                <td>
+                    <strong>Rookie:</strong> Crear una animación donde el personaje se mueva en línea recta y emita un sonido divertido cada vez que lo haga.<br><br>
+                    <strong>Master:</strong> Crear una animación donde el personaje se mueva en forma de zigzag y emita sonidos mientras se mueve.<br><br>
+                    <strong>Hacker:</strong> Crear una animación donde tres personajes se muevan en diferentes direcciones y cada uno emita un sonido único al moverse.<br><br>
+                    "¡Elijan su nivel y comencemos a programar!"
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Paso 3:</strong> Proyectar (Diapositiva 11): Temporizador de 20 minutos con recordatorio de los tres niveles para mantener a los estudiantes enfocados en sus tareas.</td>
+                <td>"¡Es hora de programar, Genios! Tienen 20 minutos para trabajar en sus animaciones y efectos de sonido. Recuerden: pueden pedir ayuda si necesitan inspiración, pero cada uno de ustedes es el creador de su propio proyecto. ¡Manos a la obra!"</td>
+            </tr>
+            <tr id="activity-3-step-4">
+                <td><strong>Paso 4:</strong> Proyectar (Diapositiva 12): Temporizador de 5 minutos para ajustes finales con un recordatorio visual de los detalles a revisar (movimientos, sonidos y secuencias).</td>
+                <td>"¡Gran trabajo, Genios! Ahora prueben su animación y ajusten los detalles. Asegúrense de que todo fluya como quieren. ¡Perfeccionen sus creaciones para hacerlas aún más espectaculares!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 5:</strong> Proyectar (Diapositiva 13): Preguntas de reflexión sobre el proceso creativo y de programación para animaciones y sonidos.</td>
+                <td>"¡Increíble, Genios! Reflexionemos sobre lo que aprendimos: ¿Qué descubrieron al crear su animación? ¿Qué fue lo más divertido y lo más difícil? ¿Qué harían diferente si tuvieran más tiempo? ¡Compartan sus ideas con el grupo!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 6:</strong> Proyectar (Diapositiva 14): Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, centrándose en los desafíos.</td>
+                <td>"Genios, revisemos nuestros objetivos para este desafío: 1. ¿Crearon una animación con movimientos y sonidos en Scratch? 2. ¿Experimentaron y usaron su creatividad al máximo? Estoy seguro de que lograron cosas increíbles. ¡Compartan cómo se sienten con sus proyectos!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('activity-4-content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 10 minutos</div>
+        <hr>
+        <div class="subtitle">Colaboración en equipo para compartir y mejorar las animaciones.</div>
+    </div>
+    <div id="activity-4-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 15): Mostrar instrucciones para formar equipos. Indicar a los estudiantes que encuentren un compañero o grupo pequeño para compartir su trabajo.</td>
+                <td>"¡Genios! Ahora es momento de compartir lo que han creado. Formen equipos de dos o tres personas y prepárense para mostrar y hablar sobre sus animaciones. ¡Colaborar nos hace más geniales!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 2:</strong> Proyectar (Diapositiva 16): Temporizador de 30 segundos para formar los equipos.</td>
+                <td>"Tienen 30 segundos para encontrar compañeros. ¡Encuentren a su equipo rápidamente y prepárense para compartir!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 3:</strong> Proyectar (Diapositiva 17): Explicar la importancia de usar las Magic Tablets (o cuadernos) para anotar ideas clave.</td>
+                <td>"Ahora, recojan sus Magic Tablets. Las usaremos para escribir ideas geniales de mejora mientras colaboran con sus equipos. ¡Las ideas que anoten pueden hacer sus animaciones aún más increíbles!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 4:</strong> Proyectar (Diapositiva 18): Temporizador de 30 segundos para recoger las Magic Tablets.</td>
+                <td>"¡Tienen 30 segundos para recoger sus Magic Tablets! Prepárense para anotar ideas geniales que harán que sus animaciones sean increíbles."</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 5:</strong> Proyectar (Diapositiva 19): Explicar el método Think-Pair-Share y guiar a los equipos para reflexionar y colaborar.</td>
+                <td>"Vamos a usar Think-Pair-Share: Primero, piensen individualmente sobre cómo mejorarían su animación. Luego, compartan sus ideas con su equipo, y juntos hagan un plan para implementar las mejoras. ¡Colaboren y creen algo espectacular!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 6:</strong> Proyectar (Diapositiva 20): Instrucciones para la colaboración activa con un temporizador de 3 minutos.</td>
+                <td>"¡Es hora de mejorar sus animaciones! Trabajen juntos para aplicar las ideas geniales que discutieron. Tienen 3 minutos para implementar sus cambios y hacer que sus proyectos sean aún más increíbles."</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 7:</strong> Proyectar (Diapositiva 21): Preguntas para reflexionar sobre la colaboración y los resultados.</td>
+                <td>"Reflexionemos juntos: ¿Cómo trabajaron en equipo? ¿Qué aprendieron sobre compartir ideas y mejorar juntos? ¿Qué podrían hacer mejor la próxima vez? ¡Compartan sus aprendizajes y celebremos sus logros!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('activity-5-content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4.5 minutos</div>
+        <hr>
+        <div class="subtitle">Cierre reflexivo y organización del espacio de trabajo.</div>
+    </div>
+    <div id="activity-5-content" class="content">
+        <table>
+            <tr>
+                <th>Acción</th>
+                <th>Diálogo Sugerido</th>
+            </tr>
+            <tr>
+                <td><strong>Paso 1:</strong> Proyectar (Diapositiva 22): Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron.</td>
+                <td>"Genios, revisemos nuestros objetivos de hoy: 1. ¿Aprendieron a usar bloques de sonido en Scratch para sus animaciones? 2. ¿Colaboraron en equipo para mejorar sus proyectos? Estoy seguro de que lograron grandes cosas. ¿Cómo se sienten sobre lo que hicieron hoy?"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 2:</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.</td>
+                <td>"Hoy, todos trabajaron increíblemente bien. Crearon animaciones fantásticas, exploraron sonidos creativos y colaboraron de manera espectacular. ¡Estoy muy orgulloso de todo el equipo Gnius!"</td>
+            </tr>
+            <tr>
+                <td><strong>Paso 3:</strong> Proyectar (Diapositiva 23): Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.</td>
+                <td>"Ahora, vamos a honrar nuestro espacio de trabajo. Recojan todos los materiales, incluyendo las Magic Tablets, y dejen el salón en perfecto orden. ¡Así demostramos respeto por nuestro entorno y por el trabajo de todos!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+  
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts adicionales -->
+    <script>
+        // Espacio para scripts adicionales si es necesario
+    </script>
+
+</body>
+</html>
